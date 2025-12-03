@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "busybox-demo.fullname" . }}-test"
+  labels:
+    {{- include "busybox-demo.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: test
+      image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+      command: ['sh', '-c', 'echo "BusyBox test successful"']
+  restartPolicy: Never
