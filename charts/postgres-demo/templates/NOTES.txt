@@ -1,0 +1,7 @@
+1. Get the PostgreSQL service by running:
+
+  export POD_NAME=$(kubectl get pods --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "postgres-demo.name" . }},app.kubernetes.io/instance={{ .Release.Name }}" -o jsonpath="{.items[0].metadata.name}")
+  echo "PostgreSQL is available at {{ include "postgres-demo.fullname" . }}:{{ .Values.service.port }}"
+  
+  To connect to PostgreSQL from within the cluster:
+  kubectl --namespace {{ .Release.Namespace }} exec -it $POD_NAME -- psql -U demo -d demo
