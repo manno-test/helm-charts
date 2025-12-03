@@ -1,0 +1,5 @@
+1. The busybox-demo pod is running and sleeping.
+   You can exec into it by running:
+
+  export POD_NAME=$(kubectl get pods --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "busybox-demo.name" . }},app.kubernetes.io/instance={{ .Release.Name }}" -o jsonpath="{.items[0].metadata.name}")
+  kubectl --namespace {{ .Release.Namespace }} exec -it $POD_NAME -- sh

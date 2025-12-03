@@ -1,0 +1,52 @@
+replicaCount: 1
+
+image:
+  repository: postgres
+  pullPolicy: IfNotPresent
+  tag: "16.1"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  automount: true
+  annotations: {}
+  name: ""
+
+podAnnotations: {}
+podLabels: {}
+podSecurityContext: {}
+securityContext: {}
+
+service:
+  type: ClusterIP
+  port: 5432
+
+ingress:
+  enabled: false
+
+resources: {}
+
+livenessProbe:
+  tcpSocket:
+    port: 5432
+readinessProbe:
+  tcpSocket:
+    port: 5432
+
+autoscaling:
+  enabled: false
+
+nodeSelector: {}
+tolerations: []
+affinity: {}
+
+env:
+  - name: POSTGRES_PASSWORD
+    value: "demo"
+  - name: POSTGRES_USER
+    value: "demo"
+  - name: POSTGRES_DB
+    value: "demo"

@@ -1,0 +1,7 @@
+1. Get the Redis service by running:
+
+  export POD_NAME=$(kubectl get pods --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "redis-demo.name" . }},app.kubernetes.io/instance={{ .Release.Name }}" -o jsonpath="{.items[0].metadata.name}")
+  echo "Redis is available at {{ include "redis-demo.fullname" . }}:{{ .Values.service.port }}"
+  
+  To connect to Redis from within the cluster:
+  kubectl --namespace {{ .Release.Namespace }} exec -it $POD_NAME -- redis-cli
