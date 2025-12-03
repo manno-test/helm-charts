@@ -3,4 +3,4 @@ name: busybox-demo
 description: A simple demo Helm chart for BusyBox
 type: application
 version: 0.1.0
-appVersion: "1.36.1"
+appVersion: "1.37.0"

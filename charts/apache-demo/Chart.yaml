@@ -3,4 +3,4 @@ name: apache-demo
 description: A simple demo Helm chart for Apache HTTP Server
 type: application
 version: 0.1.0
-appVersion: "2.4.58"
+appVersion: "2.4.65"
