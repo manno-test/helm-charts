@@ -43,6 +43,8 @@ nodeSelector: {}
 tolerations: []
 affinity: {}
 
+# WARNING: This is a demo configuration with hardcoded credentials
+# In production, use Kubernetes secrets or a secure secret management solution
 env:
   - name: POSTGRES_PASSWORD
     value: "demo"

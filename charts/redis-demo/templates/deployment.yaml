@@ -42,7 +42,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: redis
-              containerPort: {{ .Values.service.port }}
+              containerPort: 6379
               protocol: TCP
           {{- with .Values.livenessProbe }}
           livenessProbe:

@@ -8,8 +8,8 @@ metadata:
     "helm.sh/hook": test
 spec:
   containers:
-    - name: wget
-      image: busybox
-      command: ['wget']
-      args: ['{{ include "postgres-demo.fullname" . }}:{{ .Values.service.port }}']
+    - name: test
+      image: postgres:16-alpine
+      command: ['sh', '-c']
+      args: ['pg_isready -h {{ include "postgres-demo.fullname" . }} -U demo']
   restartPolicy: Never

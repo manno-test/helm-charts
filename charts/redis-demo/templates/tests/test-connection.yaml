@@ -8,8 +8,8 @@ metadata:
     "helm.sh/hook": test
 spec:
   containers:
-    - name: wget
-      image: busybox
-      command: ['wget']
-      args: ['{{ include "redis-demo.fullname" . }}:{{ .Values.service.port }}']
+    - name: test
+      image: redis:7-alpine
+      command: ['sh', '-c']
+      args: ['redis-cli -h {{ include "redis-demo.fullname" . }} ping | grep -q PONG']
   restartPolicy: Never
