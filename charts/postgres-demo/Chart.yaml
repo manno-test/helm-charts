@@ -3,4 +3,4 @@ name: postgres-demo
 description: A simple demo Helm chart for PostgreSQL
 type: application
 version: 0.1.0
-appVersion: "16.1"
+appVersion: "17.7"

@@ -3,4 +3,4 @@ name: redis-demo
 description: A simple demo Helm chart for Redis
 type: application
 version: 0.1.0
-appVersion: "7.2.0"
+appVersion: "8.4.0"
