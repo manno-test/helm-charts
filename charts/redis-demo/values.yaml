@@ -3,7 +3,7 @@ replicaCount: 1
 image:
   repository: redis
   pullPolicy: IfNotPresent
-  tag: "7.2.0"
+  tag: "8.4.0"
 
 imagePullSecrets: []
 nameOverride: ""
